@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".LoginSet.Fragments.ForgFragment">
+
+
+    <EditText
+        android:layout_marginTop="150dp"
+        android:id="@+id/forgetpass"
+        android:hint="@string/enter_email_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:autofillHints="" />
+    <Button
+        android:text="@string/send_email"
+        android:layout_marginTop="10dp"
+        android:onClick="forget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
