@@ -27,4 +27,14 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="feedback">Feedback</string>
+    <string name="school">School</string>
+    <string name="college">College</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="name_of_institution">Name of Institution</string>
+    <string name="are_you_principal">Are You Principal ?</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="submit">Submit</string>
+    <string name="upload">Upload</string>
+    <string name="profile_pic">Profile Pic</string>
+    <string name="welcome">Welcome</string>
 </resources>

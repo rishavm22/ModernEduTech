@@ -10,34 +10,39 @@
     tools:context=".Settings.ProfileEditActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+        android:id="@+id/pImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="27dp"
+        android:src="@drawable/ic_account_circle"
+        android:onClick="setProfilePic"
+        app:layout_constraintBottom_toTopOf="@+id/pName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/profile_pic" />
+
+    <EditText
+        android:id="@+id/pName"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="137dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="146dp"
-        android:layout_marginBottom="521dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="434dp"
+        android:ems="10"
+        android:hint="@string/enter_your_name"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
-        android:layout_marginBottom="434dp"
-        android:ems="10"
-        android:hint="Enter Your Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="186dp" />
+        android:autofillHints="Mr/Ms" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/toCheckType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -50,57 +55,100 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+        app:layout_constraintTop_toBottomOf="@+id/pName">
 
         <RadioButton
-            android:id="@+id/radioButton1"
+            android:id="@+id/radioSchool"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="100dp"
-            android:text="School"
+            android:text="@string/school"
             tools:layout_editor_absoluteX="30dp"
             tools:layout_editor_absoluteY="314dp" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioCollege"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="College"
+            android:text="@string/college"
             tools:layout_editor_absoluteX="199dp"
             tools:layout_editor_absoluteY="312dp" />
     </RadioGroup>
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/pInstituteName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="23dp"
         android:layout_marginBottom="302dp"
         android:ems="10"
-        android:hint="Name of Institution"
-        android:inputType="textPersonName"
+        android:hint="@string/name_of_institution"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <LinearLayout
-        android:id="@+id/schoolDeg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2">
-        <TextView
-            android:text="Select Your Designation"
-            android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@+id/toCheckType"
+        android:autofillHints=" " />
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/pMobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="408dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/enter_mobile_number"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/toCheckPrincipal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="+91" />
+
+
+    <CheckBox
+        android:id="@+id/toCheckPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="516dp"
+        android:layout_marginBottom="271dp"
+        android:gravity="center"
+        android:text="@string/are_you_principal"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="112dp"
+        android:background="@color/colorPrimary"
+        android:onClick="submit"
+        android:padding="5dp"
+        android:text="@string/submit"
+        android:textColor="#FFF"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toCheckPrincipal" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
+        android:layout_marginBottom="13dp"
+        android:onClick="uploadPic"
+        android:text="@string/upload"
+        app:layout_constraintBottom_toTopOf="@+id/pName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

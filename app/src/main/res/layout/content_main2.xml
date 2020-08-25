@@ -4,15 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="3dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_above="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tablayout"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                app:tabIndicatorColor="@android:color/black"
+                app:tabIndicatorHeight="0dp"
+                app:tabSelectedTextColor="#fff"
+                app:tabTextColor="@color/colorAccent"
+                app:tabMode="fixed"
+                app:tabRippleColor="#fff"
+                app:tabGravity="fill"/>
+    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/mshow"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/notPermitted"
+            android:visibility="gone"
+            android:padding="10dp"
+            android:text="You have to permit us
+        then only you can access all features of our app
+        Please go to app info and allow all permission required"
+            android:textSize="20sp"
+
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+        <TextView
+            android:text="@string/welcome"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_slider_mainActivity"

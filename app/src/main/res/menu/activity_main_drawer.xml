@@ -11,7 +11,15 @@
             android:icon="@drawable/ic_edit_attributes"
             android:title="Set Profile" />
         <item
-            android:id="@+id/nav_delete"
+            android:id="@+id/nav_courses"
+            android:icon="@drawable/ic_add"
+            android:title="Add Courses" />
+        <item
+            android:id="@+id/nav_approve"
+            android:icon="@drawable/ic_allow"
+            android:title="Approve" />
+        <item
+            android:id="@+id/nav_logout"
             android:icon="@drawable/ic_sign_out_24"
             android:title="Logout" />
         <item
